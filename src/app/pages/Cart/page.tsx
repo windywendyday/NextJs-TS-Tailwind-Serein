@@ -1,4 +1,4 @@
-function Cart() {
+function Page() {
     return (
         <div className="cart">
             这是购物车页面
@@ -6,4 +6,4 @@ function Cart() {
     )
 }
 
-export default Cart;
+export default Page;

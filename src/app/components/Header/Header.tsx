@@ -1,10 +1,9 @@
 import SearchInput from "@/components/Header/SearchInput";
 import Link from "next/link";
-import Cart from '../Cart/cart'
 
 function Header(){
     return (
-        <div className="w-full z-50 sticky top-0 h-10 border">
+        <div className="w-full z-50 sticky top-0 h-10 border bg-blue-300">
             <div className="container mx-auto flex justify-between items-center">
                 {/*搜索区域*/}
                 <SearchInput />
@@ -18,13 +17,13 @@ function Header(){
                         首页
                     </Link>
                     <Link
-                        href=""
+                        href="/pages/Cart"
                         className="text-white hover:bg-gray-700 p-2 rounded transition duration-300"
                     >
                         购物车
                     </Link>
                     <Link
-                        href="/login"
+                        href="/pages/Login"
                         className="text-white hover:bg-gray-700 p-2 rounded transition duration-300"
                     >
                         登录注册
