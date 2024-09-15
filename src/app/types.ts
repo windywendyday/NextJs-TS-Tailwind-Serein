@@ -1,3 +1,7 @@
+import type { TableColumnsType, TableProps } from 'antd';
+
+export type TableRowSelection<T extends object = object> = TableProps<T>['rowSelection'];
+
 export interface GalleryItems {
       galleryId: string;
       title: string;
@@ -26,3 +30,10 @@ export interface navigation{
     itemName: string;
     itemUrl: string;
 }
+
+export interface cartItem {
+    title: string;
+    imgUrl: string;
+    tag:Array<string>;
+}
+

@@ -1,12 +1,14 @@
 import SearchInput from "@/components/Header/SearchInput";
 import Link from "next/link";
+import {FC, useState} from "react";
 
-function Header(){
+const Header: FC = () => {
+
     return (
         <div className="w-full z-50 sticky top-0 h-10 border bg-blue-300">
             <div className="container mx-auto flex justify-between items-center">
                 {/*搜索区域*/}
-                <SearchInput />
+                <SearchInput/>
 
                 {/*右侧导航*/}
                 <div className="flex space-x-4">
