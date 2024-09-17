@@ -37,3 +37,7 @@ export interface cartItem {
     tag:Array<string>;
 }
 
+export interface res {
+    data: object;
+    status: number;
+}

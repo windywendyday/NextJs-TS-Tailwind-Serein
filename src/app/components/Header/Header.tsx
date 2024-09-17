@@ -5,7 +5,7 @@ import {FC, useState} from "react";
 const Header: FC = () => {
 
     return (
-        <div className="w-full z-50 sticky top-0 h-10 border bg-blue-300">
+        <div className="w-full z-50 sticky top-0 h-12 border bg-blue-300">
             <div className="container mx-auto flex justify-between items-center">
                 {/*搜索区域*/}
                 <SearchInput/>

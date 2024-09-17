@@ -3,7 +3,7 @@ import {Simulate} from "react-dom/test-utils";
 import error = Simulate.error;
 
 const instance = axios.create({
-    baseURL: "http://49.234.181.165:5001/api/v1",
+    baseURL: "https://49.234.181.165:5001",
     timeout: 5000,
 })
 
@@ -13,7 +13,12 @@ instance.interceptors.request.use(
 )
 
 instance.interceptors.response.use(
-    res => res,
+    (res) => {
+        if (!res || !res.data) {
+            return Promise.reject(new Error("Invalid response format"));
+        }
+        return res;
+    },
     error => Promise.reject(error),
 )
 

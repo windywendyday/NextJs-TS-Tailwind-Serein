@@ -29,3 +29,12 @@ body {
     text-wrap: balance;
   }
 }
+
+input {
+  padding: 0.4rem;
+}
+
+input::placeholder {
+  color: #ADC4CE;
+  font-size: 0.9rem;
+}

@@ -7,6 +7,7 @@ import Liner from "@/components/Admin/Liner";
 import BannerImage from "../../../../public/banner.png";
 import Image from "next/image";
 import {loginAndSignup} from "@/api/user";
+import {res} from "@/types";
 
 const Page:FC = () => {
     const [curType, setCurType] = useState<string>('login')
@@ -14,11 +15,14 @@ const Page:FC = () => {
         setCurType(val)
     }
     async function handleInfoSubmit(email: string, password: string) {
-        let res = await loginAndSignup(email, password);
-        if (res === null || res === undefined) {
-            console.error("Response is null or undefined");
-        } else {
+        console.log(email, password)
+        try {
+            let res = await loginAndSignup(email, password);
             console.log('res:', res);
+            return res
+        }catch (e:any){
+            console.error("Error during API call:", e.toString());
+            return null;
         }
     }
 
@@ -34,7 +38,7 @@ const Page:FC = () => {
                     }
                 </div>
                 <Image src={BannerImage} alt="banner" width={180} height={100} />
-                <AdminInfo onClick={handleInfoSubmit}></AdminInfo>
+                <AdminInfo onClick={handleInfoSubmit} curType={curType}></AdminInfo>
                 <Liner getType={getCurType} curType={curType}></Liner>
             </div>
             <Footer></Footer>

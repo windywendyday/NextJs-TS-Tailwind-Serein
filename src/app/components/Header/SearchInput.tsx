@@ -19,7 +19,7 @@ const SearchInput: FC = () => {
     }
 
     return (
-        <div className="flex items-center">
+        <div className="flex items-center justify-center">
             <Input type="text" placeholder="搜索" value={searchContent} onChange={(e) => setSearchContent(e.target.value)} onKeyDown={(e) => keydown(e)}/>
             <Button
                 className="rounded bg-sky-600 py-[0.2rem] px-[0.2rem] ml-2 text-sm text-white data-[hover]:bg-sky-500 data-[active]:bg-sky-700"
