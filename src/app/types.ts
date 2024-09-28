@@ -1,4 +1,4 @@
-import type { TableColumnsType, TableProps } from 'antd';
+import type { TableProps } from 'antd';
 
 export type TableRowSelection<T extends object = object> = TableProps<T>['rowSelection'];
 
@@ -42,4 +42,10 @@ export interface cartItem {
 export interface res {
     data: object;
     status: number;
+}
+
+export interface category {
+    categoryId: number;
+    categoryName: string;
+    children: Array<category> | null;
 }

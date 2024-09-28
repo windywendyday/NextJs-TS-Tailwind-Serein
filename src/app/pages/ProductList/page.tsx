@@ -1,6 +1,7 @@
 import {FC} from "react";
 import Header from "@/components/Header/Header";
 import {SpuItem} from "@/types";
+import Category from "@/components/Category/Category";
 
 const spuList:Array<SpuItem> = [
     {
@@ -31,7 +32,7 @@ const page:FC = () => {
         <div className="bg-mildBlue h-dvh">
             <Header />
             {/*导航*/}
-            <div>导航</div>
+            <Category />
             <div className="grid grid-cols-4">
                 {
                     spuList.map(e => {
