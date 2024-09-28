@@ -7,7 +7,6 @@ import Liner from "@/components/Admin/Liner";
 import BannerImage from "../../../../public/banner.png";
 import Image from "next/image";
 import {loginAndSignup} from "@/api/user";
-import {res} from "@/types";
 
 const Page:FC = () => {
     const [curType, setCurType] = useState<string>('login')
@@ -17,7 +16,7 @@ const Page:FC = () => {
     async function handleInfoSubmit(email: string, password: string) {
         console.log(email, password)
         try {
-            let res = await loginAndSignup(email, password);
+            const res = await loginAndSignup(email, password);
             console.log('res:', res);
             return res
         }catch (e:any){

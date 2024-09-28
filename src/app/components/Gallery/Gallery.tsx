@@ -1,8 +1,6 @@
 'use client';
 import {FC, useEffect, useState} from "react";
 import { Image } from 'antd'
-import {GalleryItems} from "@/types";
-import requests from "../../../utils/requests";
 
 const Gallery:FC = () => {
     const [imageUrls, setImageUrls] = useState<string[]>([]);
@@ -17,19 +15,21 @@ const Gallery:FC = () => {
         setImageUrls(urls); // 更新图片 URL 列表
     }, [])
 
+    function handleGalleryClick(){
+        navigateToPages()
+    }
+
     function navigateToPages(){
         console.log('navigate')
     }
 
     return (
-        <div className="h-fit grid grid-cols-3 grid-rows-3 gap-1 m-14 bg-amber-50">
+        <div className="h-fit grid grid-cols-3 grid-rows-2 gap-1 m-14 bg-amber-50">
             {
                 imageUrls.map((url, index) => (
-                    <div key={index} className="m-4">
+                    <div key={index} className="m-4" onClick={handleGalleryClick}>
                         <Image
                             src={url}
-                            width={420}
-                            height={550}
                             preview={false}
                             onClick={navigateToPages}
                         />

@@ -35,6 +35,8 @@ export interface cartItem {
     title: string;
     imgUrl: string;
     tag:Array<string>;
+    key: string;
+    price: number;
 }
 
 export interface res {
